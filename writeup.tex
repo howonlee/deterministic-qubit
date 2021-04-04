@@ -1,0 +1,535 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\begin{filecontents*}[overwrite]{general.bib}
+@misc{aaronson,
+  author = {Aaronson, Scott},
+  title = {Quantum Information Science Lecture Notes},
+  url = {https://www.scottaaronson.com/qclec/18.pdf}
+}
+
+@article{bbbv,
+  author = {Bennett, Charles H. and Bernstein, Ethan and Brassard, Gilles and Vazirani, Umesh},
+  month = {10},
+  pages = {1510-1523},
+  title = {Strengths and Weaknesses of Quantum Computing},
+  urldate = {2020-05-11},
+  volume = {26},
+  year = {1997},
+  journal = {SIAM Journal on Computing}
+}
+
+@article{boolmin,
+  author = {Buchfuhrer, David and Umans, Christopher},
+  month = {01},
+  pages = {142-153},
+  title = {The complexity of Boolean formula minimization},
+  url = {http://users.cms.caltech.edu/~umans/papers/BU07.pdf},
+  urldate = {2020-05-17},
+  volume = {77},
+  year = {2011},
+  journal = {Journal of Computer and System Sciences}
+}
+
+@misc{classft1,
+  author = {Aharonov, Dorit and Landau, Zeph and Makowsky, Johann},
+  title = {The quantum FFT can be classically simulated *},
+  url = {https://arxiv.org/pdf/quant-ph/0611156.pdf},
+  urldate = {2020-05-17},
+  year = {2007}
+}
+
+@article{classft2,
+  author = {Yoran, Nadav and Short, Anthony J.},
+  month = {10},
+  title = {Efficient classical simulation of the approximate quantum Fourier transform},
+  url = {https://arxiv.org/pdf/quant-ph/0611241.pdf},
+  urldate = {2020-05-17},
+  volume = {76},
+  year = {2007},
+  journal = {Physical Review A}
+}
+
+@article{eldarshor,
+  author = {Eldar, Lior and Shor, Peter W.},
+  month = {11},
+  title = {An Efficient Quantum Algorithm for a Variant of the Closest Lattice-Vector Problem},
+  url = {https://arxiv.org/abs/1611.06999},
+  urldate = {2020-05-17},
+  year = {2016},
+  journal = {arXiv preprint}
+}
+
+@book{fractals,
+  author = {Falconer, Kenneth J},
+  publisher = {Wiley},
+  title = {Fractal geometry},
+  year = {1990}
+}
+
+@article{grovers,
+  author = {Grover, Lov K.},
+  month = {11},
+  title = {A fast quantum mechanical algorithm for database search},
+  url = {https://arxiv.org/abs/quant-ph/9605043},
+  volume = {1996},
+  year = {1996},
+  journal = {STOC}
+}
+
+@misc{knuth,
+  author = {Knuth, Donald},
+  title = {The correspondence between Donald E. Knuth and Peter van Emde Boas on priority deques during the spring of 1977},
+  url = {https://staff.fnwi.uva.nl/p.vanemdeboas/knuthnote.pdf}
+}
+
+@article{modexp,
+  author = {Van Meter, Rodney and Itoh, Kohei M.},
+  month = {05},
+  title = {Fast quantum modular exponentiation},
+  url = {https://arxiv.org/pdf/quant-ph/0408006.pdf},
+  urldate = {2020-05-18},
+  volume = {71},
+  year = {2005},
+  journal = {Physical Review A}
+}
+
+@misc{numpartition,
+  author = {Mertens, Stephan},
+  title = {The Easiest Hard Problem: Number Partitioning},
+  url = {https://arxiv.org/pdf/cond-mat/0310317.pdf},
+  urldate = {2020-05-18}
+}
+
+@article{otp,
+  author = {Shannon, Claude E.},
+  month = {10},
+  pages = {656-715},
+  title = {Communication Theory of Secrecy Systems*},
+  urldate = {2019-04-26},
+  volume = {28},
+  year = {1949},
+  journal = {Bell System Technical Journal}
+}
+
+@article{qft,
+  author = {Coppersmith, Don},
+  month = {01},
+  title = {An approximate Fourier transform useful in quantum factoring},
+  url = {https://arxiv.org/abs/quant-ph/0201067},
+  urldate = {2020-05-18},
+  year = {2002},
+  journal = {arXiv:quant-ph/0201067}
+}
+
+@article{semiqft,
+  author = {Griffiths, Robert B. and Niu, Chi-Sheng},
+  month = {04},
+  pages = {3228–3231},
+  title = {Semiclassical Fourier Transform for Quantum Computation},
+  url = {https://arxiv.org/abs/quant-ph/9511007},
+  urldate = {2020-05-18},
+  volume = {76},
+  year = {1996},
+  journal = {Physical Review Letters}
+}
+
+@article{simons,
+  author = {Simon, Daniel R.},
+  month = {10},
+  pages = {1474-1483},
+  title = {On the Power of Quantum Computation},
+  urldate = {2020-05-18},
+  volume = {26},
+  year = {1997},
+  journal = {SIAM Journal on Computing}
+}
+
+@misc{watrous,
+  author = {Watrous, John},
+  title = {Lecture 6: Simon's algorithm},
+  url = {https://cs.uwaterloo.ca/~watrous/LectureNotes/CPSC519.Winter2006/06.pdf},
+  urldate = {2020-05-18},
+  year = {2006}
+}
+
+@book{xorsat,
+  author = {Mezard, Marc and Montanari, Andrea},
+  publisher = {Oxford University Press},
+  title = {Information, Physics, and Computation},
+  year = {2009}
+}
+
+@article{zhegalkin,
+  author = {Zhegalkin, Ivan Ivanovich},
+  title = {On the technique of calculating propositions in symbolic logic (Sur le calcul des propositions dans la logique symbolique)},
+  volume = {34},
+  year = {1927},
+  journal = {Matematicheskii Sbornik}
+}
+\end{filecontents*}
+\addbibresource{general.bib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    }
+\usepackage[margin=1in]{geometry}
+\setlength{\parskip}{0.5em}
+
+
+\title{On the Deterministic Qubit}
+\author{Howon Lee}
+\date{May 17 2020}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The deterministic qubit is the propositional variable. Its measurement is logical interpretation. A classical deterministic Fourier and Hadamard transform is presented with respect to a propositional data structure inspired from quantum states. These integral transforms match both the speed and the limitations of the quantum integral transforms. In addition, a way to handle entangling with similar speed and limitations is also given.
+\end{abstract}
+
+\section{Introduction}
+
+It occurred to me that the essential portion of the quantum speedup of the Fourier-like transforms was the tensor product structure, not the amplitude semantics. But proper qubits are not necessary for this. This thought has strong humor value.
+
+This viewpoint goes through for Hadamard transform and Fourier transform. This portion constitutes a simpler deterministic replication of the work of \cite{classft1} \cite{classft2}, although without the use of either of their notation.
+
+But they were not able to implement interesting quantum algorithms classically. At the root, this is because to do anything interesting entanglement is needed.
+
+This may seem to require the amplitude semantics. This is not necessarily the case. A deterministic point of view on entanglement is given which has some caveats but is still fast and classical. This is the putative original contribution.
+
+The underlying trick to the data structure is liberal usage of the Kronecker operators, Kronecker sum and Kronecker product. They are used \textit{without} evaluation, upon a linear representation of propositional variables. They stay compressed in this way while we apply operators to them, and give us answers only upon interpretation.
+
+\pagebreak
+\section{Data Structure}
+
+Boolean functions can be represented by a vector that contains their outputs, given inputs in canonical order. This is of interest because Boolean functions, if you think of the output vectors as representing numbers, are more compressed representations of numbers than bit vectors are.
+
+Consider a propositional variable $A$. We imagine that the literals can actually be in 4 states:
+
+$$\text{Affirm}: A$$
+$$\text{Negate}: \neg A$$
+$$\text{Tautology}: \top $$
+$$\text{Nullity(contradiction)}: \bot $$
+
+Construe these as having a mapping to 2-vectors.
+
+$$\text{Affirm}: [0 1]^T$$
+$$\text{Negate}: [1 0]^T$$
+$$\text{Tautology}: [1 1]^T$$
+$$\text{Nullity}: [0 0]^T$$
+
+It is also useful to think of a phase shifted tautology: $\top^\theta = [1, -1]^T$. This is the same logical value if constrained to be in $GF(2)$ but we don't think of it that way, in much the same way as the two trivial Hadamard superpositions get the same probability when measured, but are out of phase. Think of it as being on the unit circle in $L^{\infty}$ norm.
+
+Also note that contradiction is not on the Bloch sphere at all.
+
+Given a Boolean function with corresponding propositional sentence of $n$ variables, the function can represent $2^{2^n}$ numbers, as opposed to the bitvector of $n$ bits, which can only represent $2^n$ numbers. However, in most cases the propositional sentences are much harder to work with, and the number of literals (as opposed to the number of variables) can explode. This work constitutes an exploration of the ways one can feasibly work with them for certain tasks.
+
+You can factorize a Boolean function composed only of ANDs into a series of Kronecker products of ket-like vectors, applying the above mapping. I am not a physicist at all so don't expect too many actual bras or kets.
+
+$$ \neg A \land \neg B \land \neg C = [1 0]^T \otimes [1 0]^T \otimes [1 0]^T$$
+$$ = [1 0 0 0 0 0 0 0]^T $$
+
+Despite all the talk about bitvectors, there is nothing preventing these vectors from being complex-valued, negative-valued, etc. Of course that sometimes does not have meaning as a propositional sentence, but they still have meaning as states.
+
+Note that the factored representations can be thought of as a compressed representation of the expanded representation. We wish to stay in that compressed representation all the time.
+
+The Boolean ring also needs XOR. Construe XOR as Kronecker sum.
+
+$$ \neg A \land \neg B \oplus \neg C = [1 0]^T \otimes [1 0]^T \oplus [1 0]^T$$
+
+Note that I overload $\oplus$ as both XOR and Kronecker sum.
+
+To have a Kronecker sum for vectors, denote $k_i$ as the full superposition vector $[1 1 1 ... 1 1 1]^T \in \mathbb{C}^i$. Sometimes it is worth thinking of that vector as the Hadamard superposition of a bunch of 0 basis qubits. Consider $k_c$ and $k_d$ as sized to make the below operation make sense.
+
+$$C \oplus D = C \otimes k_c + k_d \otimes D$$
+
+The $+$ is not $\oplus$, it denotes an ordinary sum (an ordinary XOR construed on the whole bitvector, in this situation).
+
+Therefore,
+
+$$[1 0]^T \otimes [1 0]^T \oplus [1 0]^T = [0 1 1 0 1 0 1 0]^T$$
+
+\subsection{Interpretation of Data Structure}
+
+The propositional variable can then be seen as a sort of deterministic qubit. $A$ is $|1 \rangle$, $\top^\theta$ is $|- \rangle$, and so on.
+
+Interpretation of the formula becomes, then, a sort of deterministic quantum measurement. Interpretation consists of indexing into the overall bitvector which the propositional formula is representing. This is the same as assigning a truth-value to the variables, as in ordinary logical interpretation. But there is the same phenomenon where interpretation consumes the formula, just as measurement consumes qubits.
+
+A very material problem is finding the correct interpretation. Picking a random interpretation often degenerates into a probabilistic argument, so if one is doing interference a satisfying interpretation must be found. But the point of view on entangling given below seems to create polyspace XORSAT instances if the initial proposition is polyspace with regards to input, which happens in much of practical quantum computing. This seems to be the most material possible objection to this point of view.
+
+The bitvector which the prepositional formula represents is the result column of the truth table of the prepositional formula.
+
+The claim is that this data structure allows us to do nontrivial computations on the Boolean function, without actually expanding the output of the Boolean function into a large bit vector. 
+
+To interpret something nontrivial such as $[1, e^{2\pi i}]^T \otimes [1, 1]^T$, take the values in the corresponding indices according to the interpretation and then multiply for AND, add for XOR, etc. So if the two literals belonged to two different variables, and we were negating both, the result would be $e^{2 \pi i} * 1 = e^{2 \pi i}$. This is because interpretation is indexing into the overall vector which the proposition represents.
+
+Often this is not precisely what was wanted, if we want to stay as a pure state. This is because the Bloch sphere in the $L^{\infty}$ norm ends up being the Bloch cube. I believe the easiest way to fix this is to redo the definitions of sine and cosine, such that they conform with the unit circle in $L^{\infty}$ being a square, and the Pythagorean relation ends up being such that,
+
+$$\max(|\cos(x)|, |\sin(x)|) = 1$$
+
+Then, Euler's equation $e^{ix} = \cos x + i\sin x $ has its usual meaning, just with a different definition of sine and cosine. You have to be careful with this, but most Fourier analysis can be carried through without material changes.
+
+A prepositional product state (PPS) is a preposition which has only ANDs. In its linear form, then, it would have only Kronecker products, and so is unentangled. Entanglement consists of not being representable as a PPS, and therefore having to be a summation of different prepositional states. Entanglement is discussed more in section \ref{entangle}.
+
+\subsection{Properties of Kronecker operators}
+
+Here is the mixed-product property of the Kronecker product:
+
+$$ (A \otimes B)(C \otimes D) = (AC) \otimes (BD) $$
+
+With multiple Kronecker products, this turns into:
+
+\begin{equation} \label{prodfactor}
+(\bigotimes_i A_i)(\bigotimes_i X_i) = \bigotimes_i (A_i X_i)
+\end{equation}
+
+Consider also the case of Kronecker sums. If the left side of a compound left multiplication consists of a Kronecker product, we can also have a sort of mixed-product property.
+
+We only care about cases where the left side is a Kronecker product because for the linear operators we are interested in, that will always be the case, and we deal with the entangling of the Fourier transform differently.
+
+The right side will correspond to the linear propositional sentences and therefore could also have Kronecker sums.
+
+$$ (A \otimes B)(C \oplus D) = (A \otimes B)(C \otimes k + k \otimes D) $$
+$$ = (AC \otimes B k_b) + (A k_a \otimes BD) $$
+
+Consider for more iterated Kronecker sum.
+
+$$ (A \otimes B \otimes C)(D \oplus E \oplus F) $$
+$$ = (AD \otimes B k_b \otimes C k_c) + (A k_a \otimes BE \otimes C k_c) + (A k_a \otimes B k_b \otimes CF)$$
+
+In the general case,
+
+\begin{equation} \label{sumfactor}
+(\bigotimes_i A_i)(\bigoplus_j B_j) = \sum_j (\bigotimes_i A_i M_ij)
+\end{equation}
+where $M_ij$ is $B_j$ if Kronecker delta $\delta_{ij} = 1$ and $k_i$ otherwise.
+
+And, of course, Kronecker products and sums may be mixed, in which case both equations \ref{prodfactor} and \ref{sumfactor} may be used. But we can left multiply by a linear operator that factorizes out under the Kronecker \textit{product} only.
+
+Consider $(\bigotimes_i X_i)(\bigodot_i Y_i)$, where $\odot \in \{ \otimes, \oplus \}$.
+\begin{equation} \label{bothfactor}
+(\bigotimes_i X_i)(\bigodot_i Y_i) = (X_1 \otimes (\bigotimes_{i \in 2...} X_i))(Y_1 \odot (\bigodot_{i \in 2...} Y_i))
+\end{equation}
+
+Case if $\odot = \otimes$:
+
+$$
+(X_1 \otimes (\bigotimes_{i \in 2...} X_i))(Y_1 \otimes (\bigodot_{i \in 2...} Y_i))
+= (X_1 Y_1) \otimes ((\bigotimes_{i \in 2...} X_i) (\bigodot_{i \in 2...} Y_i))
+$$
+
+Case if $\odot = \oplus$:
+
+$$
+(X_1 \otimes (\bigotimes_{i \in 2...} X_i))(Y_1 \oplus (\bigodot_{i \in 2...} Y_i))
+$$
+$$
+= (X_1 \otimes (\bigotimes_{i \in 2...} X_i))(Y_1 \otimes k_a + k_b \otimes (\bigodot_{i \in 2...} Y_i))
+$$
+where $a$ and $b$ are just chosen to make the product work.
+$$
+= (X_1 \otimes (\bigotimes_{i \in 2...} X_i))(Y_1 \otimes k_a) + (X_1 \otimes (\bigotimes_{i \in 2...} X_i))(k_b \otimes (\bigodot_{i \in 2...} Y_i))
+$$
+$$
+= (X_1 Y_1) \otimes ((\bigotimes_{i \in 2...} X_i) k_a) + X_1 k_b \otimes ((\bigotimes_{i \in 2...} X_i)((\bigodot_{i \in 2...} Y_i)))
+$$
+
+In the implementation, you cannot recurse naively because you need to deal with the associative structure of the right term. The left term associates because Kronecker product associates with itself, but it doesn't associate with Kronecker sums (just like ordinary products and sums), so the right term may have structure which is trivial but annoying to deal with.
+
+So, iff we stay in the propositional form, at each step we add $n$ new terms if $\odot = \oplus$ and $1$ new term if $\odot = \otimes$. Therefore, left multiplication by a linear operator factorable into Kronecker product can only square the size of the proposition.
+
+I highly suspect that you could do better than $O(p^2)$ where the $p$ is the number of terms in the proposition, but this suffices for now.
+
+\pagebreak
+\section{Propositional Integral Transforms}
+\subsection{Propositional Hadamard Transform}
+
+The linear operator of interest here is the matrix which corresponds to the Walsh-Hadamard (Hadamard) transform.
+
+The Hadamard transform without normalization in matrix form is defined as such:
+
+$$ H_1 = \begin{bmatrix}
+1 & 1\\
+1 & -1
+\end{bmatrix}$$
+$$ H_n = H_1 \otimes H_{n-1} $$
+
+I omit the normalization in calculations but you can add it whereever you'd like or omit if you are thinking that you are working in $L^{\infty}$. The deterministic semantics of interpretation means that it usually doesn't matter.
+
+Applying the transform on a vector consists of multiplying the vector by a matrix.
+
+$$ r = Hv $$
+
+But note that, in the case where the Boolean function corresponding to the vector is a propositional product state, both the matrix and the vector are composed of Kronecker products of small matrices and vectors.
+
+$$ r = (H_1 \otimes H_2 \otimes H_3 ...)(v_1 \otimes v_2 \otimes v_3 ...) $$
+
+Then use equation \ref{prodfactor} to factor things out:
+
+$$ r = (H_1 v_1) \otimes (H_2 v_2) \otimes (H_3 v_3) ... $$
+
+Note that this is a propositional state still. Therefore, keeping it as a PPS, the only computation that needs to be done is the factored matrix-vector multiplications.
+
+The size of the propositional state is $O(\log N)$ with respect to $N$, the size of the bit vector which the state represents. The computation for one interpretation is linear with respect to the size of the propositional state. But full expansion would take $O(N \log N)$ time, where there are $N$ interpretations that take $\log N$ time each, so the speedup is only for when one interpretation is asked for.
+
+Consider $v_1 = [0 1]^T, v_2 = [1 0]^T, v_3 = [0 1]^T$.
+
+$$Hv = H_1 v_1 \otimes H_1 v_2 \otimes H_1 v_3$$
+
+$$Hv = ([1, -1]^T \otimes [1, 1]^T \otimes [1, -1]^T)$$
+
+And we are in superposition. Of course the operator is still involutive and unitary (if scaled) and so on.
+
+\subsection{Propositional Fourier Transform}
+
+The quantum Fourier transform \cite{qft}, written in bra-ket notation goes like this:
+
+$$
+\text{QFT}(|x_1 x_2 \ldots  x_n \rangle) = \frac{1}{\sqrt{N}} \ \left(|0\rangle + e^{2 \pi i \, [0.x_n] }|1\rangle\right) \otimes \left(|0\rangle + e^{2 \pi i  \, [0.x_{n-1} x_n] }|1\rangle\right) \otimes \cdots \otimes \left(|0\rangle + e^{2 \pi i \, [0.x_1 x_2 \ldots x_n] }|1\rangle\right)
+$$
+
+where
+
+$$
+[0. x_1 \ldots x_m] = \sum_{k = 1}^m x_k 2^{-k}.
+$$
+
+There are two parts to the quantum Fourier transform: the Hadamard transform and the controlled phase gates. The Hadamard transform is detailed above. Here, noting that we don't have a no-cloning theorem for propositional states, we follow Griffiths and Niu\cite{semiqft} in making a measurement and using the results of the measurement to disentangle the controlled phase gate into a single-qubit phase gate. This they call the semiclassical QFT. Unlike in the actual semiclassical QFT, if the transform is wanted before the last step of the computation, one can just copy the state.
+
+Time is $O((\log N)^2)$, as fast as the non-semiclassical QFT. This is with respect to $N$, the cardinality of the bit vector that the PPS is representing. Again there is the caveat that this holds only when one interpretation is asked for, also similar to quantum Fourier transform.
+
+This is what is required to apply the Fourier transform on a PPS. So given a PPS as a list of Numpy arrays, in Python this ends up being something like:
+
+\begin{verbatim}
+import numpy as np
+from typing import List, Tuple
+
+def complex_had(inp):
+    return inp.dot(sci_lin.hadamard(2)).astype(np.complex128)
+    
+def omega_m(m):
+    return np.exp(2 * np.pi * 1j / (2 ** m))
+    
+def apply_fourier(vecs: List[np.array], interp: Tuple[int]):
+    res = 1.0 + 0.0j
+    for vec_idx, vec in enumerate(vecs):
+        # bakes in assumption that it's a product state.
+        # to unbake it, need to rewrite to handle Kron sum also
+        res *= complex_had(vec)[interp[vec_idx]]
+        if interp[vec_idx] == 1:
+            for offset, other_vec_idx in enumerate(range(vec_idx + 1, len(vecs))):
+                vecs[other_vec_idx][1] *= omega_m(offset + 2)
+    return res
+\end{verbatim}
+
+The function is given the interpretation explicitly as a tuple equal in size to the list of Numpy arrays because, again, we can get away with it, with no no-cloning theorem. However, it is also straightforward to actually do the semiclassical Fourier transform by measuring one qubit at as time, as in \cite{semiqft}.
+
+This ends up taking the Fourier transform in the Bloch sphere for $L^2$ norm. Extension to the Bloch cube and number-theoretic Fourier transform is also straightforward.
+
+\pagebreak
+\section{Entangling and Oracles}
+
+\subsection{Entangling} \label{entangle}
+
+Superposition in and of itself is not special. Proper quantum algorithms also have entangling.
+
+This is a deterministic Bell state.
+
+$$|\Psi^+ \rangle = \neg A \oplus \neg B$$
+
+This is the XOR of $\neg A$ and $\neg B$, which if we are expanding the formula ends up being Kronecker sum. This is because, expanded out into vector form, the vector is $[0 1 1 0]^T$, which corresponds to an ordinary quantum Bell state.
+
+So deterministic 'nonlocality' ends up being the one-time pad \cite{otp}, which of course is an entirely classical phenomenon, if a very special one.
+
+Consider the CNOT gate on $(H_1 \neg A) \otimes \neg B$, where the CNOT operator is the usual one.
+
+$$(H_1 \neg A) \otimes \neg B = [1 0 1 0]^T$$
+
+$$\textbf{CNOT} ((H_1 \neg A) \otimes \neg B) = [1 0 0 1]^T = \neg A \oplus B$$
+
+So, you can construe the CNOT gate as an operator on the propositional formula, entangling it into a Bell state, just as with the ordinary quantum states. On the level of the individual interpretations, it applies as a matrix operator, but it is possible to also examine it only with respect to the overall Boolean formula, where it involutes the Hadamard operator on $A$, changes the $\otimes$ to an $\oplus$ (then back, if applied again), and negates $B$.
+
+Taken that way, the overall CNOT operation is involutive in the same way that adding a variable XORed to the formula is involutive.
+
+If the entangled state can still be represented as one propositional formula, with using Kronecker sums, equation \ref{sumfactor} means that an application of a linear operator factorable by tensor product on it gets only a polynomial number of propositional formulas. So this is the way of dealing with entanglement without an exponential expansion of sums.
+
+If we expanded the Kronecker sums into sums of Kronecker products, we would get into the exponential expansion of terms which we are trying to dealing with by using entangled states. So keep the Kronecker sums as they are, and just do interpretations at the end, just like how we just measure at the end in an ordinary quantum computation.
+
+\subsection{Oracles}
+
+It looks like true black-box oracles are not possible, we need propositional formulas for the functions which we are treating as oracles to shuffle them around. So Deutsch's remains a creature of proper quantum algorithms only. I will still call them oracles, but be mindful of this point.
+
+Importantly, this is why the proven quantum lower bounds don't apply.
+
+But modular exponentiation, among all sorts of other fun functions, is not a black box, so I suspect this is all still of interest.
+
+Consider a half adder. It can be constructed with two propositional formulae, for the $x_1$, sum, and $x_2$, carry:
+\begin{itemize}
+    \item $x_1 = A \oplus B$
+    \item $x_2 = A \land B$
+\end{itemize}
+
+Obviously, with the AND, the system is not unitary. We have a 4-variable formula to represent inputs and outputs, and we want a unitary transformation corresponding to the half adder. Call this formula:
+
+$$ z = y_1 \land y_2 \land y_3 \land y_4 $$
+
+With the consideration that $y_i \in \{ \bot \top A  \neg A \}$ before the oracle is applied.
+
+You could actually construct the entire oracle as a matrix, interpret the formula for all interpretations, and apply the matrix (but note that there's an exponential slowdown with respect to the quantum version there), but note that we can just work entirely in the propositional formula space, without exponential slowdown.
+
+$$ U_f z = y_1 \land y_2 \land y_3 \oplus (x_1) \land y_4 \oplus (x_2) $$
+
+$$ U_f z = y_1 \land y_2 \land y_3 \oplus (y_1 \oplus y_2) \land y_4 \oplus (y_1 \land y_2) $$
+
+So if you are stricken with exponential size of the propositional formula, this won't help you. But many important quantum applications don't have this problem, or only sometimes have this problem. It seems, most importantly, that Shor's doesn't have this problem, because folks write down small circuits for modular exponentiation\cite{modexp} all the time.
+
+There is not a strict requirement of unitarity with operations on propositional sentences, unlike with qubit registers. Therefore, there is also a simpler way to do the oracle, which is to just apply the function to the inputs. This has the problem of changing the register size, but the above also effectively changes the register size.
+
+$$ z = (y_1 \oplus y_2) \land (y_1 \land y_2) $$
+
+Also do not forget that there is no no-cloning theorem for propositional states.
+
+To get the phase oracle, initialize the initial variables to $|-\rangle$, or $\top^\theta$, or the phase shifted tautology, to get superposition right off the bat and then apply the oracle.
+
+\subsection{Fractal Structure}
+
+The prepositional state data structure is actually leftovers from a particularly spirited but failed attempt to attack number partitioning. The columns of a table for the dynamic programming solution to number partition \cite{numpartition} can be construed as large sets, which are bitvectors but could be represented as propositions as in the way I described: the progression of columns in that algorithm is the OR of the previous set and a shifted version of the set.
+
+The difficulties of having to do interpretation do not matter for number partitioning (or subset sum) because one index of the dynamic program table gets queried anyhow. I was trying to get the shift done via Fourier transform in $GF(2)$ (so Hadamard transform) construed as propositional formulae. But the OR is the troublemaker.
+
+This was thought of because I wanted the ideal dynamic program table to be square (to a constant factor) at criticality of number partition \cite{numpartition}. When you poke at the critical phase transition of anything, as the SFI folks know, a fractal pops out with pretty good regularity, and I figured I could model it as a linear iterated function system\cite{fractals}. So note that the propositional states are linear iterated function systems.
+
+\subsection{Grover's}
+
+Note that the speedup of Grover's search \cite{grovers} is derived from quantum mechanics depending on the $L^2$ norm instead of probability, which is based upon the ordinary $L^1$ norm \cite{bbbv}. Not only the fact of the speedup, but the amount, where functional inversion is done in $O(N^{\frac{1}{2}})$.
+
+We must investigate the question as to whether the data structure presented here could be construed as being based upon the $L^{\infty}$ norm, being deterministic and the variable states having pretty intuitive meanings in that norm. This is not a certain thing, even though I spoke of it with certainty in several points here.
+
+This has strong comedy value, because the BBBV result \cite{bbbv} shows that one cannot do better than Grover's speedup if one is to ignore the structure of NP-complete problems - but this one would just make Grover's speedup better. Probably you could use interference in a lot of classical algorithms but finding a classical Grover's is most exciting for this reason.
+
+I don't know if the speedup would really get us to $O(N^{\frac{1}{\infty}}) = O(1)$ (really the oracle would dominate), but it would be worth a try. Inversion of propositions can be interpreted as finding satisfying assignments, so this is of great interest.
+
+I admit it probably will not work, but it will be pretty good entertainment. Probably the catch is that there is a requirement for a polyspace representation of the function on the Boolean ring, so it could just end up being XORSAT. But note that the Sierpinski linear operator to transform truth table results columns to Zhegalkin form \cite{zhegalkin} is factorable with respect to Kronecker product.
+
+In a related note, Eldar and Shor put out a retracted preprint for theoretical preliminaries for the preparation of a possible quantum attack on learning with errors\cite{eldarshor}, one of the more important putative post-quantum public cryptography methods. They had to retract it because some of the geometric arguments did not go through. It is of great interest if those geometric arguments go through and if an attack could be created in the $L^{\infty}$ norm.
+
+\subsection{Implementations}
+
+This document should have come in a Github repo with implementations of the entangling phenomenon and the integral transforms, but not Simon's. There are a few implementation notes not present in this work which are present right besides the implementations. Here is a link to the Github repo.
+
+\url{https://github.com/howonlee/deterministic-qubit}
+
+\subsection{Acknowledgements}
+
+Thanks to various folks who I won't name. Thanks to the YOSPOS kids for the well-justified mockery, and the CSPAM kids for the also well-justified mockery a year ago.
+
+I had started on a portion of Shor's algorithm before I realized the consequences of what that would entail. Thanks in particular to P----face of YOSPOS, who yelled at me enough that I thought a bit harder about figuring out a way to publish without Shor's but with entanglement and interference, so folks have some time if they're convinced.
+\printbibliography
+
+\end{document}
